@@ -1,0 +1,13 @@
+{
+  "name": "pignal-incidents",
+  "description": "Incident communication craft — severity, timelines, and postmortems",
+  "version": "1.0.0",
+  "author": {
+    "name": "Pignal",
+    "email": "hello@pignal.net"
+  },
+  "homepage": "https://pignal.net/skills",
+  "repository": "https://github.com/pignalnet/pignal-skills",
+  "license": "MIT",
+  "keywords": ["pignal", "incidents", "postmortem", "operations"]
+}

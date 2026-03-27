@@ -1,0 +1,238 @@
+{
+  "name": "pignal-skills",
+  "owner": {
+    "name": "Pignal",
+    "email": "hello@pignal.net"
+  },
+  "metadata": {
+    "description": "Domain knowledge skills for operating Pignal websites with AI agents. 28 plugins covering all 24 templates plus platform operations, SEO, content ops, and forms.",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "pignal-platform",
+      "source": "./plugins/pignal-platform",
+      "description": "Core Pignal platform operations — create, manage, deploy, and monitor sites via MCP. Use when managing site lifecycle, checking health, deploying updates, or configuring any Pignal site.",
+      "version": "1.0.0",
+      "category": "platform",
+      "tags": ["pignal", "deployment", "management", "mcp", "monitoring"]
+    },
+    {
+      "name": "pignal-seo",
+      "source": "./plugins/pignal-seo",
+      "description": "Cross-template SEO optimization — on-page SEO principles, structured data, JSON-LD, meta tags, llms.txt, and content auditing for any Pignal site.",
+      "version": "1.0.0",
+      "category": "workflow",
+      "tags": ["pignal", "seo", "structured-data", "json-ld", "optimization"]
+    },
+    {
+      "name": "pignal-content-ops",
+      "source": "./plugins/pignal-content-ops",
+      "description": "Content quality review, validation workflows, and publishing gates. Use when reviewing, moderating, or bulk-managing content across any Pignal site.",
+      "version": "1.0.0",
+      "category": "workflow",
+      "tags": ["pignal", "moderation", "quality", "validation", "publishing"]
+    },
+    {
+      "name": "pignal-forms",
+      "source": "./plugins/pignal-forms",
+      "description": "Site actions and lead capture — create forms, CTAs, manage submissions, configure webhooks. Works with any Pignal template's form system.",
+      "version": "1.0.0",
+      "category": "workflow",
+      "tags": ["pignal", "forms", "cta", "submissions", "webhooks"]
+    },
+    {
+      "name": "pignal-blogger",
+      "source": "./plugins/pignal-blogger",
+      "description": "Expert blogging craft for Pignal Blog/Signals sites. Editorial workflow, writing structure, tagging strategy, content planning, and article SEO. Use when writing blog posts, creating articles, or operating a blog site.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "blog", "writing", "editorial", "signals"]
+    },
+    {
+      "name": "pignal-wiki",
+      "source": "./plugins/pignal-wiki",
+      "description": "Technical documentation craft for Pignal Wiki sites. Information architecture, docs-as-code methodology, cross-referencing, and the Diataxis framework. Use when writing docs, organizing knowledge bases, or creating reference material.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "wiki", "documentation", "knowledge-base"]
+    },
+    {
+      "name": "pignal-til",
+      "source": "./plugins/pignal-til",
+      "description": "Micro-knowledge capture for Pignal TIL sites. Concise entry format, atomic ideas, daily grouping, and knowledge compression. Use for quick learnings, micro-blogging, or daily TIL entries.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "til", "micro-entries", "learning"]
+    },
+    {
+      "name": "pignal-glossary",
+      "source": "./plugins/pignal-glossary",
+      "description": "Terminology and reference craft for Pignal Glossary sites. Clear definitions, alphabetical organization, cross-referencing, and lexicography principles. Use when defining terms or building reference tables.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "glossary", "reference", "definitions"]
+    },
+    {
+      "name": "pignal-magazine",
+      "source": "./plugins/pignal-magazine",
+      "description": "News and editorial craft for Pignal Magazine sites. Inverted pyramid structure, headline writing, lede construction, and news value hierarchy. Use when writing news articles, feature stories, or editorial content.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "magazine", "news", "editorial", "journalism"]
+    },
+    {
+      "name": "pignal-reviews",
+      "source": "./plugins/pignal-reviews",
+      "description": "Critical assessment craft for Pignal Review sites. Balanced evaluation methodology, rating criteria, pros/cons structure, and comparison frameworks. Use when writing reviews, ratings, or product comparisons.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "reviews", "ratings", "comparisons"]
+    },
+    {
+      "name": "pignal-podcast",
+      "source": "./plugins/pignal-podcast",
+      "description": "Podcasting craft for Pignal Podcast sites. Show notes structure, episode management, guest attribution, and series planning. Use when managing podcast episodes or creating show notes.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "podcast", "episodes", "show-notes"]
+    },
+    {
+      "name": "pignal-shop",
+      "source": "./plugins/pignal-shop",
+      "description": "E-commerce craft for Pignal Shop sites. Product copywriting, pricing psychology, inventory management, collection strategy, and product SEO. Use when creating product listings, managing inventory, or optimizing shop content.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "shop", "ecommerce", "products", "inventory"]
+    },
+    {
+      "name": "pignal-menu",
+      "source": "./plugins/pignal-menu",
+      "description": "Menu engineering for Pignal Menu sites. Menu psychology, pricing display, section organization, and food description writing. Use when creating menus, price lists, or food/drink catalogs.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "menu", "pricing", "restaurant", "food"]
+    },
+    {
+      "name": "pignal-services",
+      "source": "./plugins/pignal-services",
+      "description": "Service marketing craft for Pignal Service Directory sites. Service positioning, tier design, availability communication, and value differentiation. Use when listing services, creating pricing tiers, or managing service offerings.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "services", "directory", "pricing", "tiers"]
+    },
+    {
+      "name": "pignal-recipes",
+      "source": "./plugins/pignal-recipes",
+      "description": "Recipe writing craft for Pignal Recipe sites. Structured instructions, ingredient formatting, time calculations, and recipe SEO. Use when writing recipes, formatting cooking instructions, or managing a recipe collection.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "recipes", "cooking", "food", "instructions"]
+    },
+    {
+      "name": "pignal-journal",
+      "source": "./plugins/pignal-journal",
+      "description": "Reflective writing craft for Pignal Journal sites. Journaling techniques, reflection prompts, daily practice, and personal narrative. Use when writing diary entries, daily reflections, or personal journal posts.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "journal", "diary", "reflection", "personal"]
+    },
+    {
+      "name": "pignal-bookshelf",
+      "source": "./plugins/pignal-bookshelf",
+      "description": "Book review craft for Pignal Bookshelf sites. Review methodology, reading status tracking, and collection organization. Use when reviewing books, tracking reading progress, or managing a reading list.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "bookshelf", "reading", "books", "reviews"]
+    },
+    {
+      "name": "pignal-changelog",
+      "source": "./plugins/pignal-changelog",
+      "description": "Release communication craft for Pignal Changelog sites. Keep a Changelog conventions, semver principles, and audience-appropriate release notes. Use when writing changelogs, release notes, or documenting software updates.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "changelog", "releases", "semver", "updates"]
+    },
+    {
+      "name": "pignal-runbook",
+      "source": "./plugins/pignal-runbook",
+      "description": "Procedural writing craft for Pignal Runbook sites. SOP methodology, step-by-step instructions, escalation paths, and verification steps. Use when creating runbooks, SOPs, or operational procedures.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "runbook", "sop", "operations", "procedures"]
+    },
+    {
+      "name": "pignal-incidents",
+      "source": "./plugins/pignal-incidents",
+      "description": "Incident communication craft for Pignal Incident Log sites. Severity classification, timeline construction, root cause analysis, and blameless postmortem methodology. Use when documenting incidents, writing postmortems, or managing incident logs.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "incidents", "postmortem", "operations", "response"]
+    },
+    {
+      "name": "pignal-portfolio",
+      "source": "./plugins/pignal-portfolio",
+      "description": "Portfolio presentation craft for Pignal Portfolio sites. Project storytelling, visual hierarchy, impact quantification, and portfolio sequencing. Use when showcasing projects, creating portfolio entries, or presenting creative work.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "portfolio", "gallery", "projects", "creative"]
+    },
+    {
+      "name": "pignal-writing",
+      "source": "./plugins/pignal-writing",
+      "description": "Creative writing craft for Pignal Writing sites. Narrative structure, storytelling techniques, dialogue, pacing, and voice. Use when writing fiction, creative non-fiction, essays, or long-form narrative content.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "writing", "fiction", "creative", "narrative"]
+    },
+    {
+      "name": "pignal-course",
+      "source": "./plugins/pignal-course",
+      "description": "Instructional design craft for Pignal Course sites. Bloom's taxonomy, learning objectives, lesson sequencing, and scaffolding. Use when creating tutorials, courses, lessons, or educational content.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "course", "tutorials", "education", "learning"]
+    },
+    {
+      "name": "pignal-flashcards",
+      "source": "./plugins/pignal-flashcards",
+      "description": "Knowledge testing craft for Pignal Flashcard sites. Effective Q&A design, spaced repetition principles, and multi-level questioning. Use when creating study cards, quiz questions, or knowledge assessments.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "flashcards", "study", "education", "quiz"]
+    },
+    {
+      "name": "pignal-directory",
+      "source": "./plugins/pignal-directory",
+      "description": "Resource curation craft for Pignal Directory sites. Resource evaluation, category design, status tracking, and description writing for links. Use when curating resources, organizing directories, or managing link collections.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "directory", "resources", "curation", "links"]
+    },
+    {
+      "name": "pignal-awesome",
+      "source": "./plugins/pignal-awesome",
+      "description": "Awesome-list curation craft for Pignal Curated List sites. GitHub awesome-list standards, inclusion criteria, and community curation. Use when building curated lists, awesome-lists, or link collections.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "awesome-list", "curation", "links", "community"]
+    },
+    {
+      "name": "pignal-case-studies",
+      "source": "./plugins/pignal-case-studies",
+      "description": "Case study methodology for Pignal Case Study sites. Outcome storytelling, metric selection, before/after framing, and client voice integration. Use when writing case studies, documenting project outcomes, or presenting client work.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "case-studies", "outcomes", "professional", "methodology"]
+    },
+    {
+      "name": "pignal-resume",
+      "source": "./plugins/pignal-resume",
+      "description": "Career branding craft for Pignal Resume sites. Achievement-driven writing, impact quantification, experience narrative, and professional positioning. Use when creating resumes, CVs, or professional profiles.",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["pignal", "resume", "cv", "career", "professional"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "pignal-shop",
+  "description": "E-commerce craft — product copywriting and pricing psychology",
+  "version": "1.0.0",
+  "author": {
+    "name": "Pignal",
+    "email": "hello@pignal.net"
+  },
+  "homepage": "https://pignal.net/skills",
+  "repository": "https://github.com/pignalnet/pignal-skills",
+  "license": "MIT",
+  "keywords": ["pignal", "shop", "ecommerce", "products"]
+}

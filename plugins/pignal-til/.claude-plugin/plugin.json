@@ -1,0 +1,13 @@
+{
+  "name": "pignal-til",
+  "description": "Micro-knowledge capture — concise entries and daily learning",
+  "version": "1.0.0",
+  "author": {
+    "name": "Pignal",
+    "email": "hello@pignal.net"
+  },
+  "homepage": "https://pignal.net/skills",
+  "repository": "https://github.com/pignalnet/pignal-skills",
+  "license": "MIT",
+  "keywords": ["pignal", "til", "micro-entries", "learning"]
+}
