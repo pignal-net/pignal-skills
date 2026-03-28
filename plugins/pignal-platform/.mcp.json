@@ -2,7 +2,7 @@
   "mcpServers": {
     "pignal-hub": {
       "type": "url",
-      "url": "https://mcp.pignal.net/sse"
+      "url": "https://mcp.pignal.net/mcp"
     }
   }
 }
