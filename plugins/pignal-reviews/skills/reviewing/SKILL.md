@@ -1,3 +1,10 @@
+---
+name: reviewing
+description: |
+  Critical assessment craft for Pignal Review sites. Balanced evaluation methodology, rating criteria, pros/cons structure, and comparison frameworks. Use when writing reviews, rating products, comparing options, or creating assessments.
+allowed-tools: [mcp__*]
+---
+
 # Critical Assessment Craft
 
 Balanced evaluation, rating methodology, comparison frameworks, and evidence-based claims for Pignal Review sites. Use when writing product reviews, ratings, comparisons, or any evaluative content.

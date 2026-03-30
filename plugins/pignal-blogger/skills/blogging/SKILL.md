@@ -1,3 +1,10 @@
+---
+name: blogging
+description: |
+  Expert blog writing craft for Pignal Blog and Signals sites. Editorial workflow, writing structure, content strategy, tagging, and article SEO. Use when writing blog posts, creating articles, planning content, structuring articles, choosing content types, designing tag taxonomies, or managing an editorial pipeline.
+allowed-tools: [mcp__*]
+---
+
 # Blogging Craft
 
 Expert blog writing, editorial workflow, and content strategy for blog and signals sites. Use this skill whenever creating blog posts, planning content, structuring articles, choosing content types, designing tag taxonomies, or managing an editorial pipeline. Covers the full lifecycle: ideation, drafting, structuring, tagging, validating, and publishing.

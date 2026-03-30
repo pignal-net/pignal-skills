@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__.*__call_site_tool",
+        "hooks": [{
+          "type": "prompt",
+          "prompt": "Check if this call_site_tool invocation is a write or mutation operation (i.e., it creates, modifies, publishes, or deletes content, types, workspaces, or settings — as opposed to reading, listing, or searching). If it IS a write operation and no metadata-discovery operation has been performed for this site earlier in this conversation, return systemMessage: 'Discover site configuration first (types, workspaces, guidelines) before performing write operations.' Otherwise no output."
+        }]
+      },
+      {
+        "matcher": "mcp__.*__delete_site",
+        "hooks": [{
+          "type": "prompt",
+          "prompt": "Site deletion is permanent. Return systemMessage: 'WARNING: This permanently destroys site, database, and all content.' Set permissionDecision to 'ask'."
+        }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__.*__call_site_tool",
+        "hooks": [{
+          "type": "prompt",
+          "prompt": "If this call_site_tool operation created a new content item (as opposed to updating, listing, or configuring) and succeeded, return systemMessage: 'Item created as private. Next: run a validation/quality-check operation, then publish with a descriptive slug.' Otherwise no output."
+        }]
+      }
+    ]
+  }
+}

@@ -1,3 +1,10 @@
+---
+name: documentation
+description: |
+  Technical documentation craft for Pignal Wiki and Knowledge Base sites. Diataxis framework, docs-as-code, information architecture, and cross-referencing. Use when writing documentation, organizing knowledge bases, creating reference material, tutorials, how-to guides, or explanations.
+allowed-tools: [mcp__*]
+---
+
 # Technical Documentation Craft
 
 Expert technical documentation writing, information architecture, and knowledge base management for wiki and documentation sites. Use this skill whenever creating documentation, organizing knowledge bases, writing reference material, how-to guides, tutorials, or explanations — or when operating a Pignal wiki site. Covers the full lifecycle: planning information architecture, choosing document types, drafting with the right methodology, cross-referencing, validating, and publishing.

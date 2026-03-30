@@ -5,6 +5,7 @@ description: |
   classification, timeline construction, root cause analysis, and blameless
   postmortem methodology. Use when documenting incidents, writing postmortems,
   managing incident logs, or communicating outages.
+allowed-tools: [mcp__*]
 ---
 
 # Incident Communication Craft

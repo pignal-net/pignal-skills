@@ -1,5 +1,7 @@
 ---
+name: book-reviewing
 description: "Book review craft for Pignal Bookshelf sites. Review methodology, reading status tracking, and collection organization. Use when reviewing books, tracking reading progress, managing a reading list, or operating a Pignal bookshelf site."
+allowed-tools: [mcp__*]
 ---
 
 # Book Review Craft

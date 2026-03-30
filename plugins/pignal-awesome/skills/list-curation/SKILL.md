@@ -4,6 +4,7 @@ description: |
   Awesome-list curation craft for Pignal Curated List sites. Inclusion
   criteria, quality standards, and community curation. Use when building
   curated lists, awesome-lists, or link collections.
+allowed-tools: [mcp__*]
 ---
 
 # Awesome-List Curation Craft

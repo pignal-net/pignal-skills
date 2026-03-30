@@ -7,6 +7,7 @@ description: |
   glossaries, creating reference tables, managing terminology, or
   operating a Pignal glossary site. Also triggers when asked to define
   something, explain terminology, or create a reference guide.
+allowed-tools: [mcp__*]
 ---
 
 # Terminology and Definition Craft

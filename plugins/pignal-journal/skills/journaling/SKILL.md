@@ -1,5 +1,7 @@
 ---
+name: journaling
 description: "Reflective writing craft for Pignal Journal sites. Journaling techniques, reflection prompts, daily practice, and personal narrative. Use when writing diary entries, daily reflections, personal journal posts, or operating a Pignal journal site. Also use when someone wants to reflect, process experiences, or maintain a writing practice."
+allowed-tools: [mcp__*]
 ---
 
 # Journaling Craft

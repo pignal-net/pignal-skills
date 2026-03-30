@@ -33,7 +33,7 @@ Before submitting a skill, verify:
 
 ## How to Contribute
 
-### Adding a New Skill
+### Adding a New Plugin
 
 1. **Fork** this repository
 2. **Create** your plugin in `plugins/pignal-{name}/`
@@ -42,15 +42,22 @@ Before submitting a skill, verify:
    plugins/pignal-{name}/
    ├── .claude-plugin/
    │   └── plugin.json
-   └── skills/
-       └── {skill-name}/
-           ├── SKILL.md
-           └── references/     (optional)
+   ├── agents/
+   │   └── {domain}-operator.md   (autonomous operator agent)
+   ├── skills/
+   │   └── {skill-name}/
+   │       ├── SKILL.md
+   │       └── references/        (optional)
+   ├── hooks/
+   │   └── hooks.json             (Tier 1 & 2 only)
+   └── commands/
+       └── *.md                   (Tier 1 & 2 only)
    ```
 4. **Write** your SKILL.md following the template below
-5. **Add** your plugin entry to `.claude-plugin/marketplace.json`
-6. **Test** locally: `claude --plugin-dir ./plugins/pignal-{name}`
-7. **Submit** a pull request
+5. **Write** your operator agent following the agent template below
+6. **Add** your plugin entry to `.claude-plugin/marketplace.json`
+7. **Test** locally: `claude --plugin-dir ./plugins/pignal-{name}`
+8. **Submit** a pull request
 
 ### plugin.json Template
 
@@ -108,6 +115,46 @@ Before creating or managing content, discover your site's configuration:
 
 {Anti-patterns with explanations of WHY they're harmful.}
 ```
+
+### Agent Template
+
+Every template plugin should include an operator agent at `agents/{domain}-operator.md`:
+
+```yaml
+---
+name: {domain}-operator
+description: |
+  Autonomous operator for Pignal {Template} sites. Analyzes site state,
+  researches what the site needs, creates expert-quality {content-noun}s,
+  validates, and publishes end-to-end without human input.
+  Use when operating, maintaining, or creating content for a Pignal
+  {template} site.
+tools: [mcp__*, WebSearch, WebFetch]
+skills: [{skill-name}]
+maxTurns: 100
+---
+
+{System prompt with 6-phase workflow}
+```
+
+**Agent Quality Checklist:**
+
+- [ ] **Fully autonomous:** Agent NEVER asks for user input
+- [ ] **Three modes:** Handles autonomous operation (scheduled), directed creation, and maintenance
+- [ ] **Six phases:** Discover → Research & Decide → Plan → Create → Validate & Publish → Report
+- [ ] **Phase 2 is domain-specific:** What does this domain research? (e.g., blogs check trends, shops check catalog gaps)
+- [ ] **Phase 4 encodes craft:** Content structure, keySummary patterns, quality criteria specific to the domain
+- [ ] **Good/bad examples:** Includes keySummary examples showing what good and bad look like
+- [ ] **Error handling:** Retry once, skip with note, always complete with report
+- [ ] **Structured report:** Reports what was done, what was published, issues, suggestions for next run
+
+**Agent Design Principles:**
+
+- The primary use case is **scheduled autonomous operation** — agents run on a schedule with no human present
+- Don't limit Phase 4 to the current SKILL.md content — research and apply professional-grade domain best practices
+- The agent should understand the template's real-world purpose: what does a professional in this domain do?
+- Agents work through MCP tools (`mcp__*`) and web research (`WebSearch`, `WebFetch`)
+- Hooks in Tier 1 and Tier 2 plugins handle cross-cutting quality gates — template agents don't need their own hooks
 
 ### Improving an Existing Skill
 

@@ -7,6 +7,7 @@ description: |
   operational procedures, creating troubleshooting guides, or operating
   a Pignal runbook site. Also use for any step-by-step procedural
   documentation or operational guides.
+allowed-tools: [mcp__*]
 ---
 
 # Procedural Writing Craft

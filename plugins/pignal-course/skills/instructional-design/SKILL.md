@@ -4,6 +4,7 @@ description: |
   Instructional design craft for Pignal Course sites. Bloom's taxonomy,
   learning objectives, lesson sequencing, and scaffolding. Use when
   creating tutorials, courses, lessons, or educational content.
+allowed-tools: [mcp__*]
 ---
 
 # Instructional Design Craft

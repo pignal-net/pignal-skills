@@ -4,6 +4,7 @@ description: |
   Knowledge testing craft for Pignal Flashcard sites. Q&A design, spaced
   repetition principles, and multi-level questioning. Use when creating
   flashcards, quiz questions, study materials, or knowledge assessments.
+allowed-tools: [mcp__*]
 ---
 
 # Knowledge Testing Craft

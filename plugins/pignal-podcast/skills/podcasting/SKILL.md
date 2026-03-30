@@ -1,3 +1,10 @@
+---
+name: podcasting
+description: |
+  Podcasting craft for Pignal Podcast sites. Show notes structure, episode management, guest attribution, timestamps, and series planning. Use when managing podcast episodes, creating show notes, or planning series.
+allowed-tools: [mcp__*]
+---
+
 # Podcasting Craft
 
 Podcasting craft for Pignal Podcast sites. Show notes structure, episode management, guest attribution, and series planning. Use when managing podcast episodes, writing show notes, planning episode series, or operating a Pignal podcast site.

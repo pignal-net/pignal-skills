@@ -1,3 +1,10 @@
+---
+name: content-quality
+description: |
+  Content quality review and validation workflows for any Pignal site. Review methodology, quality gates, content lifecycle, and publishing readiness assessment. Use when reviewing content, moderating, assessing quality, or managing publishing workflows.
+allowed-tools: [mcp__*]
+---
+
 # Content Quality Review and Publishing Workflow
 
 Content quality review and publishing workflow for any Pignal site. Review methodology, quality gates, content lifecycle management, and bulk moderation. Use when reviewing content, checking quality, moderating posts, auditing content, or deciding what to publish. Also use for content cleanup, archiving, or bulk operations.

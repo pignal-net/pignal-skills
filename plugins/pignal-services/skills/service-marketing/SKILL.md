@@ -7,6 +7,7 @@ description: |
   managing service offerings, or operating a Pignal services site.
   Also use for professional service descriptions, consulting packages,
   or freelance service pages.
+allowed-tools: [mcp__*]
 ---
 
 # Service Marketing Craft

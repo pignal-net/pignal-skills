@@ -1,3 +1,10 @@
+---
+name: form-design
+description: |
+  Form design and lead capture for any Pignal site. Form UX, CTAs, submission management, and webhook integration. Use when creating forms, designing CTAs, managing submissions, or configuring webhooks.
+allowed-tools: [mcp__*]
+---
+
 # Form Design and Lead Capture
 
 Form design and lead capture for any Pignal site. Form UX best practices, conversion optimization, CTA strategy, and webhook integration. Use when creating forms, adding contact forms, setting up newsletter signups, managing submissions, building CTAs, or working with site actions.

@@ -1,5 +1,7 @@
 ---
+name: recipe-writing
 description: "Recipe writing craft for Pignal Recipe sites. Structured instructions, ingredient formatting, time calculations, and recipe structure. Use when writing recipes, formatting cooking instructions, managing a recipe collection, or operating a Pignal recipe site. Also use for food content and cooking guides."
+allowed-tools: [mcp__*]
 ---
 
 # Recipe Writing Craft

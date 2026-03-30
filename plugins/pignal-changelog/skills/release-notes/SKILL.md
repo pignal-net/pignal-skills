@@ -7,6 +7,7 @@ description: |
   creating release notes, summarizing what shipped, or operating a Pignal
   changelog site. Also triggers on version updates, release documentation,
   or "what changed" requests.
+allowed-tools: [mcp__*]
 ---
 
 # Release Communication Craft

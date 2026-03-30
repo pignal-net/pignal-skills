@@ -7,6 +7,7 @@ description: |
   content, or operating a Pignal shop site. Also use for product
   descriptions, pricing tiers, catalog management, or any e-commerce
   content creation.
+allowed-tools: [mcp__*]
 ---
 
 # E-Commerce Craft

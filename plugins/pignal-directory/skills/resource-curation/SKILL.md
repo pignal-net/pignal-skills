@@ -4,6 +4,7 @@ description: |
   Resource curation craft for Pignal Directory sites. Resource evaluation,
   category design, status tracking, and description writing. Use when
   curating resources, organizing directories, or managing link collections.
+allowed-tools: [mcp__*]
 ---
 
 # Resource Curation Craft

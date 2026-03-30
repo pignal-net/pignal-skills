@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "mcp__.*__call_site_tool",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "If this call_site_tool operation published/vouched an item to make it publicly visible, and no validation/quality-check operation was performed on the same item earlier in this session, return systemMessage: 'Published without validation. Consider running a validation/quality-check operation for E-E-A-T trust signals — validation adds creativeWorkStatus and editorialNote to JSON-LD structured data, strengthening Experience, Expertise, Authoritativeness, and Trustworthiness signals for search engines.' Otherwise no output."
+          }
+        ]
+      }
+    ]
+  }
+}

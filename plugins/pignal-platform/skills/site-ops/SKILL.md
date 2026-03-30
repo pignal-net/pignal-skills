@@ -1,3 +1,10 @@
+---
+name: site-ops
+description: |
+  Core Pignal platform operations — site lifecycle, MCP orchestration, deployment, content management, template selection, and configuration. Use when creating sites, managing content, configuring settings, deploying updates, or any Pignal site operation.
+allowed-tools: [mcp__*, Read, Grep, Glob, WebFetch]
+---
+
 # Site Operations
 
 Manage the full lifecycle of Pignal sites -- creation, content management, configuration, and deployment -- through MCP. Use this skill whenever working with Pignal sites: creating new sites, saving or organizing content, managing types and workspaces, configuring settings, redeploying, or deleting sites. This skill covers the MCP orchestration pattern, template selection, content workflows, visibility strategy, and site configuration principles.

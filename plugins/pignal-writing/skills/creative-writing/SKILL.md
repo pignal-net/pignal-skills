@@ -4,6 +4,7 @@ description: |
   Creative writing craft for Pignal Writing sites. Narrative structure,
   storytelling, dialogue, pacing, and voice. Use when writing fiction,
   essays, personal narratives, or long-form creative content.
+allowed-tools: [mcp__*]
 ---
 
 # Creative Writing Craft

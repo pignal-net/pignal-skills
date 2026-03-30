@@ -8,6 +8,7 @@ description: |
   learnings, or operate a Pignal TIL site. Also use when someone says
   "I just learned", "TIL", "quick note about", or wants to capture
   something brief they discovered.
+allowed-tools: [mcp__*]
 ---
 
 # Micro-Knowledge Capture

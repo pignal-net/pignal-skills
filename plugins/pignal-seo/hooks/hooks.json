@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "mcp__.*__call_site_tool",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "If this call_site_tool operation published an item with a URL slug, check the slug provided. If the slug contains date patterns (e.g., YYYY-MM-DD, 2024-01-15), generic words (untitled, my-post, post-1, draft, test, new-item), or exceeds 60 characters, return systemMessage with a specific slug improvement suggestion following these rules: lowercase, hyphenated, 3-6 descriptive words, no dates, no stop words. Otherwise no output."
+          }
+        ]
+      }
+    ]
+  }
+}

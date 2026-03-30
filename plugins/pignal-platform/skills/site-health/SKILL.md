@@ -1,3 +1,10 @@
+---
+name: site-health
+description: |
+  Pignal site health monitoring and diagnostics. Use when checking site status, troubleshooting issues, verifying deployments, or monitoring site health.
+allowed-tools: [mcp__*, Read, Grep, Glob, WebFetch]
+---
+
 # Site Health & Monitoring
 
 Monitor, diagnose, and maintain the health of Pignal sites. Use this skill whenever checking site status, interpreting health checks, diagnosing availability or performance issues, understanding monitoring data, or deciding whether a site needs intervention. This skill covers health check interpretation, diagnostic workflows, proactive monitoring patterns, and escalation decisions.

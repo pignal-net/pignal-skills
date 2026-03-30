@@ -6,6 +6,7 @@ description: |
   Use when creating menus, price lists, food catalogs, managing restaurant
   or cafe content, or operating a Pignal menu site. Also triggers on
   pricing lists, food menus, beverage lists, or any itemized service pricing.
+allowed-tools: [mcp__*]
 ---
 
 # Menu Engineering

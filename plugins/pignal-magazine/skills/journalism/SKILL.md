@@ -1,3 +1,10 @@
+---
+name: journalism
+description: |
+  News and editorial craft for Pignal Magazine sites. Inverted pyramid structure, headline writing, lede construction, and news value hierarchy. Use when writing news articles, feature stories, editorial content, or covering events.
+allowed-tools: [mcp__*]
+---
+
 # News and Editorial Craft
 
 News and editorial craft for Pignal Magazine sites. Inverted pyramid structure, headline writing, lede construction, and news value hierarchy. Use when writing news articles, feature stories, editorial content, or operating a Pignal magazine/news site. Also use for any journalism-style writing.

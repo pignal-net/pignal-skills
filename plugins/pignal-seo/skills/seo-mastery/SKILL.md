@@ -1,3 +1,10 @@
+---
+name: seo-mastery
+description: |
+  Cross-template SEO optimization for any Pignal site. On-page SEO, structured data, JSON-LD, meta tags, E-E-A-T signals, llms.txt, and content auditing. Use when optimizing for search, auditing SEO, improving content discoverability, or setting up structured data.
+allowed-tools: [mcp__*]
+---
+
 # SEO Mastery
 
 Cross-template SEO optimization for any Pignal site. On-page SEO principles, structured data, E-E-A-T signals, LLM readiness, and content auditing. Use when auditing SEO, optimizing content for search, checking structured data, improving site visibility, or asking about SEO best practices. Always use this skill when SEO, search ranking, or discoverability is mentioned.

@@ -5,6 +5,7 @@ description: |
   storytelling, visual hierarchy, impact quantification, and portfolio
   sequencing. Use when showcasing projects, adding portfolio entries,
   or presenting creative work.
+allowed-tools: [mcp__*]
 ---
 
 # Portfolio Presentation Craft

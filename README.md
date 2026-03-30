@@ -18,6 +18,28 @@ Pignal's MCP server gives your AI agent **tools** — the ability to create, man
 
 Skills auto-trigger based on context. Ask "help me write a blog post" and the blogger skill activates. Ask "deploy my site" and the platform skill takes over.
 
+## Architecture
+
+Plugins are organized in three tiers:
+
+| Tier | Purpose | Plugins | Components |
+|------|---------|---------|------------|
+| **Core** | Site lifecycle, MCP connection, quality gates | `pignal-platform` | Agent, hooks, commands, MCP, settings |
+| **Cross-Domain** | Template-agnostic optimization | `pignal-seo`, `pignal-content-ops`, `pignal-forms` | Agents, hooks, commands |
+| **Template Operators** | Domain-specific content creation | All 24 template plugins | Agent per template |
+
+Each template plugin includes:
+- **Skill** — Domain craft knowledge (editorial, e-commerce, documentation, etc.)
+- **Operator Agent** — Fully autonomous content creation and site operation
+
+### How It Works
+
+1. **Admin creates a site** (one-time) — picks template, configures plugins
+2. **Agents run on schedule** (primary) — discover site state, research what's needed, create content, validate, publish
+3. **Directed tasks** (occasional) — specific instructions like "write about X"
+
+Agents are fully autonomous — no human input needed after setup.
+
 ## Available Plugins
 
 ### Platform & Workflow (works with any template)
@@ -91,17 +113,42 @@ Skills auto-trigger based on context. Ask "help me write a blog post" and the bl
 | `pignal-case-studies` | Case Studies | Case study methodology, outcome storytelling |
 | `pignal-resume` | Resume / CV | Career branding, achievement writing |
 
-## How It Works
+## Plugin Components
 
-Skills teach your AI agent **domain expertise** — the craft knowledge that separates generic content from professional-quality output. They do NOT contain template configuration (types, workspaces, field limits). That information is discovered at runtime via MCP's `get_metadata` tool.
+Each plugin can include these components:
 
-**The workflow:**
+| Component | Purpose | Where |
+|-----------|---------|-------|
+| **Skills** | Domain craft knowledge (editorial, SEO, e-commerce, etc.) | `skills/*/SKILL.md` |
+| **Agents** | Autonomous workflow orchestrators | `agents/*.md` |
+| **Hooks** | Quality gates (enforce best practices) | `hooks/hooks.json` |
+| **Commands** | User-invocable slash commands | `commands/*.md` |
+| **MCP** | Tool server connection | `.mcp.json` |
+| **Settings** | Default configuration | `settings.json` |
 
-1. Skill loads domain expertise into context (stable craft knowledge)
-2. Agent calls `get_metadata` via MCP to discover your site's current configuration
-3. Agent combines craft knowledge + site context to produce expert-quality content
+Skills teach craft knowledge that doesn't change when you update site configuration. Template metadata (types, workspaces, field limits) is discovered at runtime via MCP's `get_metadata` tool.
 
-This separation means skills never go stale when you update your site configuration.
+### Agents
+
+Every template plugin includes an **operator agent** that runs fully autonomously:
+
+| Plugin | Agent | What it does |
+|--------|-------|-------------|
+| `pignal-platform` | `site-operator` | Creates and configures sites end-to-end |
+| `pignal-blogger` | `blog-operator` | Researches topics, writes articles, publishes |
+| `pignal-shop` | `shop-operator` | Identifies catalog gaps, creates product listings |
+| `pignal-wiki` | `wiki-operator` | Finds documentation gaps, writes using Diataxis |
+| `pignal-seo` | `seo-auditor` | Audits and fixes SEO issues across any template |
+| `pignal-content-ops` | `content-reviewer` | Reviews, scores, fixes, and batch-publishes content |
+| ... | `{domain}-operator` | Each template has its own autonomous operator |
+
+### Hooks
+
+Quality gate hooks fire automatically during MCP operations:
+
+- **Platform hooks**: Enforce `get_metadata` before writes, safety gate on site deletion, post-save reminders
+- **Content-ops hooks**: Warn when publishing without validation (E-E-A-T signals)
+- **SEO hooks**: Check slug quality on publish (no dates, no generic names)
 
 ## Recommended Combinations
 

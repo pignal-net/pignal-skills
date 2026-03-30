@@ -4,6 +4,7 @@ description: |
   Case study methodology for Pignal Case Study sites. Outcome storytelling,
   metrics, before/after framing, and client voice. Use when writing case
   studies, documenting outcomes, or presenting client work.
+allowed-tools: [mcp__*]
 ---
 
 # Case Study Methodology

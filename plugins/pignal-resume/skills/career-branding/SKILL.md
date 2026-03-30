@@ -4,6 +4,7 @@ description: |
   Career branding craft for Pignal Resume sites. Achievement writing,
   impact quantification, and professional positioning. Use when creating
   resumes, CVs, or professional profiles.
+allowed-tools: [mcp__*]
 ---
 
 # Career Branding Craft
