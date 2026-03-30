@@ -70,9 +70,11 @@ Every Tier 3 agent follows this 6-phase workflow:
 
 Call MCP tools to understand the current site:
 1. `list_my_sites` -- Find the target site
-2. `get_site_tools` -- Learn what tools the site supports
-3. `get_metadata` (via `call_site_tool`) -- Learn types, workspaces, tag options, field limits
-4. `list_items` (via `call_site_tool`) -- See what content already exists
+2. `get_site_tools` -- Discover available operations with their exact names and input schemas. Use these discovered names for all subsequent calls.
+3. Use the discovered metadata tool (via `call_site_tool`) -- Learn types, workspaces, tag options, field limits
+4. Use the discovered listing tool (via `call_site_tool`) -- See what content already exists
+
+Tool names are discovered at runtime, not hardcoded. The `get_site_tools` response tells you what operations are available and their exact names.
 
 ### Phase 2: Research and Decide (domain-specific)
 
@@ -96,9 +98,9 @@ Apply domain craft knowledge from skills. This phase is template-specific -- a r
 
 ### Phase 5: Validate and Publish
 
-1. `validate_item` (via `call_site_tool`) -- Check E-E-A-T trust signals and content quality
-2. Fix any validation issues
-3. `vouch_item` (via `call_site_tool`) -- Move item from `private` to `vouched` (publicly visible) with a descriptive slug
+1. Use the site's validation tool (via `call_site_tool`) -- Check E-E-A-T trust signals and content quality
+2. Fix any validation issues using the site's update tool
+3. Use the site's publishing tool (via `call_site_tool`) -- Move item from `private` to `vouched` (publicly visible) with a descriptive slug
 
 ### Phase 6: Report
 
@@ -119,7 +121,7 @@ plugins/pignal-{name}/
 ├── hooks/
 │   └── hooks.json           # Quality gate hooks (Tier 1 and 2 only)
 ├── commands/
-│   └── *.md                 # User-invocable slash commands (Tier 1 and 2 only)
+│   └── *.md                 # Slash commands (Tier 1/2: operations; Tier 3: operate entry point)
 ├── skills/
 │   └── {skill-name}/
 │       ├── SKILL.md         # Domain craft knowledge (under 500 lines)
@@ -128,7 +130,7 @@ plugins/pignal-{name}/
 └── settings.json            # Default settings (Tier 1 only)
 ```
 
-Not every plugin uses every component. Current Tier 3 plugins have skills only; agents, hooks, and commands are being added.
+Every Tier 3 plugin includes: skill, operator agent, and `operate` command. Tier 1 and 2 plugins additionally include hooks and specialized commands.
 
 ## Key Constraints
 
@@ -179,9 +181,11 @@ Key MCP tools (all accessed through the Pignal Hub server):
 
 Content lifecycle:
 1. Content starts as `private` (draft)
-2. `validate_item` checks E-E-A-T trust signals before publishing
-3. `vouch_item` moves content to `vouched` (publicly visible) with a descriptive slug
-4. Always call `get_metadata` before any write operation to learn current site configuration
+2. The site's validation tool checks E-E-A-T trust signals before publishing
+3. The site's publishing tool moves content to `vouched` (publicly visible) with a descriptive slug
+4. Always discover site configuration (via the metadata tool) before any write operation
+
+**Tool name convention:** Agent prompts and hooks reference site tools by intent (e.g., "the site's content creation tool", "the validation tool") rather than hardcoded names. Actual tool names are discovered at runtime via `get_site_tools`. Platform-level tools (`list_my_sites`, `create_site`, `get_site_tools`, `call_site_tool`, `get_site_status`, `redeploy_site`, `delete_site`) are stable and can be referenced by name.
 
 ## Testing
 
@@ -247,4 +251,5 @@ Inside a Claude Code session, run `/reload-plugins` to pick up changes without r
 1. Commands go in `plugins/pignal-{name}/commands/{command-name}.md`
 2. Commands are user-invocable via `/plugin-name:command-name`
 3. Keep commands focused on a single operation
-4. Commands are primarily for Tier 1 and Tier 2 plugins
+4. **Tier 1/2 plugins**: Specialized commands (e.g., `site-status`, `seo-audit`)
+5. **Tier 3 plugins**: Each has an `operate` command as a clean entry point for scheduled tasks, avoiding mode-detection overhead

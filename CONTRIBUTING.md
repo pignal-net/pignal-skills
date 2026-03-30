@@ -15,7 +15,7 @@ Pignal skills teach AI agents **domain craft knowledge** — the expertise that 
 ### Skills must NOT contain:
 - Template metadata (types, workspaces, field limits) — discovered at runtime via `get_metadata`
 - Specific field values or IDs — these change per site
-- Hardcoded MCP tool parameters — discovered at runtime
+- Hardcoded MCP tool names or parameters — discovered at runtime via `get_site_tools`
 - Rigid rules without reasoning — explain WHY, not just WHAT
 
 ## Skill Quality Checklist
@@ -51,7 +51,8 @@ Before submitting a skill, verify:
    ├── hooks/
    │   └── hooks.json             (Tier 1 & 2 only)
    └── commands/
-       └── *.md                   (Tier 1 & 2 only)
+       └── operate.md             (all tiers — scheduled task entry point)
+       └── *.md                   (Tier 1 & 2: additional specialized commands)
    ```
 4. **Write** your SKILL.md following the template below
 5. **Write** your operator agent following the agent template below
@@ -96,8 +97,10 @@ description: |
 
 Before creating or managing content, discover your site's configuration:
 
-1. Call `get_site_tools` to discover available capabilities
-2. Call `get_metadata` (via `call_site_tool`) to learn types, workspaces, limits
+1. Call `get_site_tools` to discover available operations with their exact names and schemas
+2. Use the discovered metadata tool (via `call_site_tool`) to learn types, workspaces, limits
+
+Note: Reference site tools by intent (e.g., "the content creation tool", "the validation tool") rather than hardcoded names — actual names are discovered at runtime.
 
 ## {Domain Craft Section}
 
@@ -155,6 +158,9 @@ maxTurns: 100
 - The agent should understand the template's real-world purpose: what does a professional in this domain do?
 - Agents work through MCP tools (`mcp__*`) and web research (`WebSearch`, `WebFetch`)
 - Hooks in Tier 1 and Tier 2 plugins handle cross-cutting quality gates — template agents don't need their own hooks
+- Agent prompts reference site tools by **intent**, not hardcoded names (e.g., "the site's validation tool" instead of a specific tool name) — actual names are discovered at runtime via `get_site_tools`
+- Hooks check operation **intent** (e.g., "is this a write/mutation operation?") rather than enumerating specific tool names
+- Every Tier 3 plugin should include a `commands/operate.md` as a clean entry point for scheduled tasks
 
 ### Improving an Existing Skill
 
@@ -190,7 +196,7 @@ Verify your skill triggers on the right prompts:
 
 1. Install your skill and the `pignal-platform` skill
 2. Ask Claude to perform a task in your domain
-3. Verify Claude calls `get_metadata` first (doesn't assume config)
+3. Verify Claude discovers site configuration first via `get_site_tools` (doesn't assume tool names or config)
 4. Verify domain knowledge is applied to the output
 5. Compare output quality with vs without the skill
 

@@ -122,11 +122,11 @@ Each plugin can include these components:
 | **Skills** | Domain craft knowledge (editorial, SEO, e-commerce, etc.) | `skills/*/SKILL.md` |
 | **Agents** | Autonomous workflow orchestrators | `agents/*.md` |
 | **Hooks** | Quality gates (enforce best practices) | `hooks/hooks.json` |
-| **Commands** | User-invocable slash commands | `commands/*.md` |
+| **Commands** | User-invocable slash commands and scheduled task entry points | `commands/*.md` |
 | **MCP** | Tool server connection | `.mcp.json` |
 | **Settings** | Default configuration | `settings.json` |
 
-Skills teach craft knowledge that doesn't change when you update site configuration. Template metadata (types, workspaces, field limits) is discovered at runtime via MCP's `get_metadata` tool.
+Skills teach craft knowledge that doesn't change when you update site configuration. Template metadata (types, workspaces, field limits) is discovered at runtime via MCP tools. Agent prompts reference tool operations by intent (e.g., "the site's content creation tool") rather than hardcoded names, so they stay correct even when tools are renamed.
 
 ### Agents
 
@@ -142,13 +142,31 @@ Every template plugin includes an **operator agent** that runs fully autonomousl
 | `pignal-content-ops` | `content-reviewer` | Reviews, scores, fixes, and batch-publishes content |
 | ... | `{domain}-operator` | Each template has its own autonomous operator |
 
+### Commands
+
+Each plugin includes commands for quick invocation:
+
+| Command | Plugin | Purpose |
+|---------|--------|---------|
+| `/pignal-platform:site-status` | Platform | Check health of all sites |
+| `/pignal-platform:new-site` | Platform | Create and configure a new site |
+| `/pignal-content-ops:review-content` | Content Ops | Review and fix content quality |
+| `/pignal-seo:seo-audit` | SEO | Audit and fix SEO issues |
+| `/pignal-blogger:operate` | Blogger | Run autonomous blog operation cycle |
+| `/pignal-shop:operate` | Shop | Run autonomous shop operation cycle |
+| `/pignal-{name}:operate` | Any template | Run autonomous operation for that template |
+
+The `operate` commands are designed as entry points for scheduled tasks — they trigger the full autonomous workflow without mode-detection overhead.
+
 ### Hooks
 
 Quality gate hooks fire automatically during MCP operations:
 
-- **Platform hooks**: Enforce `get_metadata` before writes, safety gate on site deletion, post-save reminders
+- **Platform hooks**: Enforce metadata discovery before writes, safety gate on site deletion, post-save reminders
 - **Content-ops hooks**: Warn when publishing without validation (E-E-A-T signals)
 - **SEO hooks**: Check slug quality on publish (no dates, no generic names)
+
+Hooks check operation **intent** (e.g., "is this a write operation?") rather than specific tool names, so they stay correct as the MCP API evolves.
 
 ## Recommended Combinations
 
