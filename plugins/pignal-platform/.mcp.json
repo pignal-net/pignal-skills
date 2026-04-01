@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "pignal-hub": {
-      "type": "http",
+      "type": "sse",
       "url": "https://mcp.pignal.net/mcp",
       "headers": {
         "Authorization": "Bearer ${PIGNAL_API_KEY}"
