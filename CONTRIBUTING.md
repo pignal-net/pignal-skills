@@ -72,7 +72,7 @@ Before submitting a skill, verify:
     "email": "your@email.com"
   },
   "homepage": "https://pignal.net/skills",
-  "repository": "https://github.com/pignalnet/pignal-skills",
+  "repository": "https://github.com/pignal-net/pignal-skills",
   "license": "MIT",
   "keywords": ["pignal", "{domain}", "{keyword}"]
 }

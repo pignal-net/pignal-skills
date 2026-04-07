@@ -6,9 +6,19 @@ Pignal's MCP server gives your AI agent **tools** — the ability to create, man
 
 ## Quick Start
 
+### 1. Create an API key
+
+Go to [pignal.net/dashboard/settings](https://pignal.net/dashboard/settings) and create an API key under **API Keys**. Set it as an environment variable:
+
+```bash
+export PIGNAL_API_KEY="phub_your_key_here"
+```
+
+### 2. Install plugins
+
 ```bash
 # Add the Pignal marketplace (one-time)
-/plugin marketplace add pignalnet/pignal-skills
+/plugin marketplace add pignal-net/pignal-skills
 
 # Install the plugins you need
 /plugin install pignal-platform@pignal-skills    # Site operations (recommended for all)
@@ -16,7 +26,16 @@ Pignal's MCP server gives your AI agent **tools** — the ability to create, man
 /plugin install pignal-seo@pignal-skills          # SEO optimization
 ```
 
+The `pignal-platform` plugin automatically connects to the Pignal MCP server using your `PIGNAL_API_KEY`. No OAuth flow needed.
+
 Skills auto-trigger based on context. Ask "help me write a blog post" and the blogger skill activates. Ask "deploy my site" and the platform skill takes over.
+
+### Authentication Options
+
+| Method | Best for | Setup |
+|--------|----------|-------|
+| **API Key** (recommended) | Scripts, CI/CD, autonomous agents | Set `PIGNAL_API_KEY` env var |
+| **OAuth** | Interactive Claude Desktop / Cursor | `claude mcp add --transport http pignal-hub https://mcp.pignal.net/mcp` (triggers GitHub login) |
 
 ## Architecture
 
