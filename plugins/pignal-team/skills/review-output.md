@@ -19,10 +19,10 @@ When you receive output from a delegated agent, evaluate:
 
 After review, choose one:
 
-- **Accept** → Call `pignal_report(status="completed", assessment="...")`
-- **Needs more work** → Call `pignal_delegate` again with specific feedback
-- **Failed** → Call `pignal_report(status="failed", assessment="...")`
-- **Needs human review** → Call `pignal_report(status="needs_review", assessment="...")`
+- **Accept** → Call `report_completed(status="completed", assessment="...")`
+- **Needs more work** → Call `assign_to_teammate` again with specific feedback
+- **Failed** → Call `report_completed(status="failed", assessment="...")`
+- **Needs human review** → Call `report_completed(status="needs_review", assessment="...")`
 
 ## Tips
 

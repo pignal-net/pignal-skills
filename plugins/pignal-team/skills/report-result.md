@@ -8,7 +8,7 @@ description: |
 
 ## How to Report
 
-Call `pignal_report` with:
+Call `report_completed` with:
 - **status**: "completed", "failed", or "needs_review"
 - **assessment**: Your quality evaluation of the work
 - **summary** (optional): Brief description of what was accomplished
@@ -25,7 +25,7 @@ monitoring, billing, and quality metrics.
 ## Example
 
 ```
-pignal_report(
+report_completed(
   status="completed",
   assessment="All 26 player profiles created with stats, bios, and photos. Quality is high — content is factual and well-structured.",
   summary="Created 26 World Cup 2026 player profile posts"

@@ -9,9 +9,9 @@ description: |
 
 ## How to Ask
 
-1. **Identify who to ask**: Call `pignal_team_info` if unsure
-2. **Ask**: Call `pignal_ask(target="<agent-name>", question="<your question>")`
-3. **STOP**: After calling pignal_ask, stop your session immediately
+1. **Identify who to ask**: Call `list_teammates` if unsure
+2. **Ask**: Call `ask_teammate(target="<agent-name>", question="<your question>")`
+3. **STOP**: After calling ask_teammate, stop your session immediately
 4. **Resume**: The system will resume you with their answer
 5. **Continue**: Use the answer to continue your work
 
@@ -25,7 +25,7 @@ description: |
 ## Example
 
 ```
-pignal_ask(
+ask_teammate(
   target="manager",
   question="Should I create posts for all 26 squad players, or focus on the starting 11?"
 )

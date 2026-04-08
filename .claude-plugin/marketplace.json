@@ -5,11 +5,19 @@
     "email": "hello@pignal.net"
   },
   "metadata": {
-    "description": "Domain knowledge skills for operating Pignal websites with AI agents. 28 plugins covering all 24 templates plus platform operations, SEO, content ops, and forms.",
+    "description": "Domain knowledge skills for operating Pignal websites with AI agents. 29 plugins covering team coordination, platform operations, SEO, content ops, forms, and all 24 templates.",
     "version": "1.0.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
+    {
+      "name": "pignal-team",
+      "source": "./plugins/pignal-team",
+      "description": "Team coordination — delegate tasks to teammates, review output, manage collaboration across agent teams.",
+      "version": "1.0.0",
+      "category": "workflow",
+      "tags": ["pignal", "team", "coordination", "delegation", "review"]
+    },
     {
       "name": "pignal-platform",
       "source": "./plugins/pignal-platform",

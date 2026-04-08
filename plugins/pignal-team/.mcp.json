@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pignal": {
+      "command": "${PIGNAL_BIN}",
+      "args": ["mcp"]
+    }
+  }
+}
