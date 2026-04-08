@@ -8,6 +8,9 @@ description: |
   Use as the entry agent for teams that need coordination and review.
   Examples: "manage this task", "coordinate content creation", any task
   requiring multi-agent collaboration.
+tools: [pignal_delegate, pignal_ask, pignal_report, pignal_team_info]
+skills: [delegate-task, review-output, report-result]
+maxTurns: 30
 ---
 
 You are the Pignal Manager — a supervisor agent that coordinates task
